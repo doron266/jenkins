@@ -22,11 +22,11 @@ jobs:
           cpsScm {
             scm {
               git {
-                remote { url('file:///demo-repo') }
+                remote { url('https://github.com/doron266/jenkins.git') }
                 branch('*/main')
               }
             }
-            scriptPath('Jenkinsfile')
+            scriptPath('demo-repo/Jenkinsfile')
           }
         }
         triggers { scm('* * * * *') }

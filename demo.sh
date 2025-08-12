@@ -7,13 +7,13 @@ msg="${2:-demo change}"
 
 case "$cmd" in
   up)
-    docker compose up -d --build
+    docker-compose up -d --build
     echo
     echo ">>> Jenkins: http://localhost:8080  (admin/admin123)"
     echo ">>> Job 'Demo-CI-Pipeline' points to ./demo-repo"
     ;;
   down)
-    docker compose down -v
+    docker-compose down -v
     ;;
   commit)
     (cd demo-repo &&       git config user.email "demo@example.com" &&       git config user.name "Demo User" &&       echo "# $msg" >> README.md &&       git add README.md && git commit -m "$msg")
